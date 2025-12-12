@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Clone</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <main>
+
+        <div class="start-menu">
+            <div class="start-menu-container">
+                
+            </div>
+        </div>
+
+        <div class="context-menu ">
+
+            <div class="menu">
+                <div class="menu-icon">
+                    <i class="ri-dashboard-horizontal-line"></i>
+                </div>
+
+                <div class="menu-text">
+                    <p>View</p>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="menu-icon">
+                    <i class="ri-sort-number-desc"></i>
+                </div>
+
+                <div class="menu-text">
+                    <p>Short by</p>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="menu-icon">
+                    <i class="ri-reset-right-line"></i>
+                </div>
+
+                <div class="menu-text">
+                    <p>Refresh</p>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="menu-icon">
+                    <i class="ri-add-circle-line"></i>
+                </div>
+
+                <div class="menu-text">
+                    <p>New</p>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="menu-icon">
+                    <i class="ri-airplay-line"></i>
+                </div>
+
+                <div class="menu-text">
+                    <p>Display settings</p>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="menu-icon">
+                    <i class="ri-pen-nib-line"></i>
+                </div>
+
+                <div class="menu-text">
+                    <p>Personalize</p>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="menu-icon">
+                    <i class="ri-tent-fill"></i>
+                </div>
+
+                <div class="menu-text">
+                    <p>AMD Software</p>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="menu-icon">
+                    <i class="ri-terminal-box-line"></i>
+                </div>
+
+                <div class="menu-text">
+                    <p>Open in terminal</p>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="menu-icon">
+                    <i class="ri-share-box-line"></i>
+                </div>
+
+                <div class="menu-text">
+                    <p>Show More Options</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="night-mode">
+
+        </div>
+
+        <div class="tabbar">
+            <div class="news">
+
+            </div>
+
+            <div class="tab-apps">
+                <div class="app">
+                    <img src="/images/start.png" alt="">
+                </div>
+
+                <div class="app">
+                    <img src="/images/search.png" alt="">
+                </div>
+
+                <div class="app">
+                    <img src="/images/file.png" alt="">
+                </div>
+
+                <div class="app">
+                    <img src="/images/chrome.png" alt="">
+                </div>
+
+                <div class="app">
+                    <img src="/images/vscode.png" alt="">
+                </div>
+
+                <div class="app">
+                    <img src="/images/edge.png" alt="">
+                </div>
+
+                <div class="app">
+                    <img src="/images/brave.png" alt="">
+                </div>
+            </div>
+
+            <div class="time-box">
+                <div class="right-tab language">
+                    <h1>ENG</h1>
+                    <p>IN</p>
+                </div>
+
+                <div class="right-tab tab-icons">
+                    <div class="wifi">
+                        <i class="ri-wifi-line"></i>
+                    </div>
+
+                    <div class="sound">
+                        <i class="ri-volume-up-line"></i>
+                    </div>
+
+                    <div class="battery">
+                        <i class="ri-battery-low-line"></i>
+                    </div>
+                </div>
+
+                <div class="right-tab date-time">
+                    <p>11:30 PM</p>
+                    <p>11-12-2025</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="options-popup">
+
+            <div class="top-navigation">
+                <div class="navigations">
+                    <div class="nav-item wifi">
+                        <i class="ri-wifi-off-line"></i>
+                        <i class="ri-wifi-line"></i>
+                    </div>
+
+                    <div class="nav-item">
+                        <i class="ri-bluetooth-line"></i>
+                    </div>
+
+                    <div class="nav-item">
+                        <i class="ri-plane-line"></i>
+                    </div>
+
+                    <div class="nav-item nightBtn">
+                        <i class="ri-sun-line"></i>
+                    </div>
+
+                    <div class="nav-item">
+                        <i class="ri-base-station-fill"></i>
+                    </div>
+
+                    <div class="saver nav-item">
+                        <i class="ri-battery-saver-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle-options">
+                <div class="brightness">
+
+                    <div class="brightness-icon">
+                        <i class="ri-sun-line"></i>
+                    </div>
+
+                    <div class="brightness-range">
+                        <input id="brightRange" class="range" type="range" min="0" max="100" step="1" value="50"
+                            aria-label="Brightness">
+                    </div>
+                </div>
+
+                <div class="brightness">
+
+                    <div class="brightness-icon">
+                        <i class="ri-volume-up-line"></i>
+                    </div>
+
+                    <div class="brightness-range">
+                        <input class="range" type="range" min="0" max="100" value="40">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-options">
+                <div class="bottom-battery">
+                    <i class="ri-battery-fill"></i>
+                    <p>69%</p>
+                </div>
+
+                <div class="settings">
+                    <i class="ri-settings-3-line"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

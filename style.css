@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+:root {
+  /* tweak these to change the effect */
+  --min-brightness: 0.5; /* darkest you want */
+  --max-brightness: 1.4; /* brightest you want */
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-image: url(/images/win11bg.jpg);
+  background-size: cover;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+main main {
+  transition: filter 140ms linear; /* smooth small steps */
+  will-change: filter;
+}
+main .night-mode {
+  display: none;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  background: rgba(255, 170, 90, 0.1); /* soft warm tint */
+  -webkit-backdrop-filter: sepia(0.25) saturate(0.8) brightness(0.95);
+          backdrop-filter: sepia(0.25) saturate(0.8) brightness(0.95);
+  position: absolute;
+  z-index: 9;
+}
+main .night-mode.active {
+  display: flex;
+}
+main .tabbar {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+main .tabbar .tab-apps {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-left: 200px;
+}
+main .tabbar .tab-apps .app {
+  width: 45px; /* fixed size so layout won't move */
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: all linear 0.05s;
+}
+main .tabbar .tab-apps .app img {
+  width: 35px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .tabbar .tab-apps .app:hover {
+  background: rgba(255, 255, 255, 0.12); /* light tint */
+  backdrop-filter: blur(8px); /* glass blur */
+  -webkit-backdrop-filter: blur(8px); /* Safari fix */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+main .tabbar .time-box {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+main .tabbar .time-box .language {
+  height: 45px;
+  width: 45px;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main .tabbar .time-box .language h1 {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+main .tabbar .time-box .language p {
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 500;
+}
+main .tabbar .time-box .tab-icons {
+  height: 45px;
+  width: 75px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: white;
+}
+main .tabbar .time-box .tab-icons i {
+  font-size: 1rem;
+  font-weight: 200;
+}
+main .tabbar .time-box .date-time {
+  height: 45px;
+  width: 75px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+main .tabbar .time-box .date-time p {
+  font-size: 0.8rem;
+  text-align: right;
+}
+main .tabbar .time-box .right-tab {
+  transition: all linear 0.05s;
+}
+main .tabbar .time-box .right-tab:hover {
+  background: rgba(255, 255, 255, 0.12); /* light tint */
+  backdrop-filter: blur(8px); /* glass blur */
+  -webkit-backdrop-filter: blur(8px); /* Safari fix */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+main .options-popup {
+  display: none;
+  height: 390px;
+  width: 360px;
+  background-color: rgb(36, 36, 36);
+  border-radius: 5px;
+  position: absolute;
+  right: 1%;
+  bottom: 10%;
+}
+main .options-popup .bottom-options {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  background-color: rgb(20, 20, 20);
+}
+main .options-popup .bottom-options .bottom-battery {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+main .options-popup .bottom-options .bottom-battery i {
+  font-size: 1rem;
+}
+main .options-popup .bottom-options .bottom-battery p {
+  font-weight: 100;
+  font-size: 0.8rem;
+}
+main .options-popup .bottom-options .settings i {
+  color: white;
+  font-weight: 100;
+  font-size: 1rem;
+}
+main .options-popup .top-navigation {
+  width: 100%;
+  padding: 20px;
+}
+main .options-popup .top-navigation .navigations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(2, 60px); /* 2 rows (100px height each) */
+  gap: 15px; /* spacing between boxes */
+}
+main .options-popup .top-navigation .navigations .nav-item {
+  background-color: rgb(49, 49, 49);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+}
+main .options-popup .top-navigation .navigations .nav-item .ri-wifi-off-line {
+  display: flex;
+}
+main .options-popup .top-navigation .navigations .nav-item .ri-wifi-off-line.off {
+  display: none;
+}
+main .options-popup .top-navigation .navigations .nav-item .ri-wifi-line {
+  display: none;
+}
+main .options-popup .top-navigation .navigations .nav-item .ri-wifi-line.on {
+  display: flex;
+}
+main .options-popup .top-navigation .navigations .nav-item:hover {
+  background-color: rgb(61, 61, 61);
+}
+main .options-popup .top-navigation .navigations .nav-item.active {
+  background: rgba(0, 102, 255, 0.8); /* blue highlight */
+}
+main .options-popup .top-navigation .navigations .nav-item.active:hover {
+  background: rgba(39, 125, 255, 0.8);
+}
+main .options-popup.open {
+  display: block;
+}
+main .middle-options {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+main .middle-options .brightness {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 5px;
+  padding: 20px 0px;
+}
+main .middle-options .brightness .brightness-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .middle-options .brightness .brightness-icon i {
+  color: white;
+  font-size: 1.2rem;
+}
+main .middle-options .brightness .brightness-range input {
+  width: 290px;
+}
+main .context-menu {
+  width: 250px;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  background: rgba(41, 41, 41, 0.77); /* semi-transparent gray tint */
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  cursor: default;
+}
+main .context-menu .menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-weight: 300;
+  padding: 2px 3px;
+  border-radius: 2px;
+  transition: all linear 0.1s;
+}
+main .context-menu .menu:hover {
+  background: rgba(255, 255, 255, 0.09); /* semi-transparent gray tint */
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+main .context-menu.open {
+  display: flex;
+}
+main .start-menu {
+  height: 560px;
+  width: 550px;
+  border-radius: 5px;
+  background: rgba(41, 41, 41, 0.77); /* semi-transparent gray tint */
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  position: absolute;
+  top: 50.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}/*# sourceMappingURL=style.css.map */
