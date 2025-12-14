@@ -103,4 +103,14 @@ document.addEventListener('click', function (e) {
     }
 });
 
+var startMenuOpen = document.querySelector('.start-menu')
+
+var startMenu = document.querySelector('#startMenu')
+
+startMenu.addEventListener("click",function(){
+    console.log("hi");
+    
+    startMenuOpen.classList.toggle("open")
+})
+
 

@@ -327,7 +327,8 @@ main {
     display: flex;
   }
 
-  .start-menu{
+  .start-menu {
+    display: none;
     height: 560px;
     width: 550px;
     border-radius: 5px;
@@ -336,7 +337,80 @@ main {
     position: absolute;
     top: 50.5%;
     left: 50%;
-    
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+
+    .start-menu-container {
+      padding: 20px 20px;
+      .search-bar {
+        input {
+          width: 100%;
+          height: 30px;
+          border-radius: 10rem;
+          border: 1px solid white;
+          background: rgba(41, 41, 41, 0.77); /* semi-transparent gray tint */
+          backdrop-filter: blur(8px);
+          color: white;
+          padding-left: 10px;
+        }
+      }
+
+      .apps-container {
+        margin-top: 10px;
+        padding: 0px 10px;
+        .apps-options {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          button {
+            border: none;
+            padding: 5px 7px;
+            border-radius: 3px;
+            background: rgba(60, 60, 60, 0.988);
+            color: white;
+            display: flex;
+            align-items: center;
+
+            i {
+              color: white;
+              font-size: 1rem;
+            }
+          }
+        }
+
+        .start-apps {
+          display: grid;
+          grid-template-columns: repeat(6, 1fr); /* 6 columns */
+          grid-template-rows: repeat(3, 1fr); /* 3 rows */
+          gap: 20px; /* spacing between items */
+          padding: 10px 0px;
+
+          .start-app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+
+            img {
+              width: 48px;
+              height: 48px;
+              object-fit: contain;
+            }
+
+            span {
+              font-size: 14px;
+              text-align: center;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .start-menu.open{
+    display: block;
   }
 }
